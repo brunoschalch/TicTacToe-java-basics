@@ -11,6 +11,9 @@ package tictactoe;
  */
 public class TicTacToeGUI extends javax.swing.JFrame {
 
+    int contador = 0;
+    char[][] cuadriculaGato = new char[3][3];
+
     /**
      * Creates new form TicTacToeGUI
      */
@@ -41,22 +44,67 @@ public class TicTacToeGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("jButton6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("jButton7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("jButton8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("jButton9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("jButton10");
 
@@ -113,6 +161,139 @@ public class TicTacToeGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (cuadriculaGato[0][0]=='X' || cuadriculaGato[0][0]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton1.setText("X");
+            cuadriculaGato[0][0]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton1.setText("O");
+            cuadriculaGato[0][0]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     if (cuadriculaGato[1][0]=='X' || cuadriculaGato[1][0]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton2.setText("X");
+            cuadriculaGato[1][0]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton2.setText("O");
+            cuadriculaGato[1][0]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       if (cuadriculaGato[2][0]=='X' || cuadriculaGato[2][0]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton3.setText("X");
+            cuadriculaGato[2][0]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton3.setText("O");
+            cuadriculaGato[2][0]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (cuadriculaGato[0][1]=='X' || cuadriculaGato[0][1]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton4.setText("X");
+            cuadriculaGato[0][1]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton4.setText("O");
+            cuadriculaGato[0][1]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    
+        if (cuadriculaGato[1][1]=='X' || cuadriculaGato[1][1]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton5.setText("X");
+            cuadriculaGato[1][1]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton5.setText("O");
+            cuadriculaGato[1][1]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if (cuadriculaGato[2][1]=='X' || cuadriculaGato[2][1]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton6.setText("X");
+            cuadriculaGato[2][1]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton6.setText("O");
+            cuadriculaGato[2][1]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         if (cuadriculaGato[0][2]=='X' || cuadriculaGato[0][2]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton7.setText("X");
+            cuadriculaGato[0][2]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton7.setText("O");
+            cuadriculaGato[0][2]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if (cuadriculaGato[1][2]=='X' || cuadriculaGato[1][2]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton8.setText("X");
+            cuadriculaGato[1][2]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton8.setText("O");
+            cuadriculaGato[1][2]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+       if (cuadriculaGato[2][2]=='X' || cuadriculaGato[2][2]=='O') {
+            return; // Se cancela todo.
+        }
+        if (contador % 2 == 0) { // si contador es par
+            jButton9.setText("X");
+            cuadriculaGato[2][2]='X'; // Guardar copia en cuadricula.
+        } else {
+            jButton9.setText("O");
+            cuadriculaGato[2][2]='O';
+        }
+        contador++;
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
