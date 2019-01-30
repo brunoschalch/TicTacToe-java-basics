@@ -40,6 +40,7 @@ public class TicTacToeGUI extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,34 +108,46 @@ public class TicTacToeGUI extends javax.swing.JFrame {
         });
 
         jButton10.setText("jButton10");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton9)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton10))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
+                        .addGap(193, 193, 193)
+                        .addComponent(jLabel1)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -156,7 +169,9 @@ public class TicTacToeGUI extends javax.swing.JFrame {
                     .addComponent(jButton8)
                     .addComponent(jButton9)
                     .addComponent(jButton10))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,136 +179,286 @@ public class TicTacToeGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (cuadriculaGato[0][0]=='X' || cuadriculaGato[0][0]=='O') {
+        if (cuadriculaGato[0][0] == 'X' || cuadriculaGato[0][0] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton1.setText("X");
-            cuadriculaGato[0][0]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[0][0] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton1.setText("O");
-            cuadriculaGato[0][0]='O';
+            cuadriculaGato[0][0] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     if (cuadriculaGato[1][0]=='X' || cuadriculaGato[1][0]=='O') {
+        if (cuadriculaGato[1][0] == 'X' || cuadriculaGato[1][0] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton2.setText("X");
-            cuadriculaGato[1][0]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[1][0] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton2.setText("O");
-            cuadriculaGato[1][0]='O';
+            cuadriculaGato[1][0] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       if (cuadriculaGato[2][0]=='X' || cuadriculaGato[2][0]=='O') {
+        if (cuadriculaGato[2][0] == 'X' || cuadriculaGato[2][0] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton3.setText("X");
-            cuadriculaGato[2][0]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[2][0] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton3.setText("O");
-            cuadriculaGato[2][0]='O';
+            cuadriculaGato[2][0] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        if (cuadriculaGato[0][1]=='X' || cuadriculaGato[0][1]=='O') {
+        if (cuadriculaGato[0][1] == 'X' || cuadriculaGato[0][1] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton4.setText("X");
-            cuadriculaGato[0][1]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[0][1] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton4.setText("O");
-            cuadriculaGato[0][1]='O';
+            cuadriculaGato[0][1] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    
-        if (cuadriculaGato[1][1]=='X' || cuadriculaGato[1][1]=='O') {
+
+        if (cuadriculaGato[1][1] == 'X' || cuadriculaGato[1][1] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton5.setText("X");
-            cuadriculaGato[1][1]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[1][1] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton5.setText("O");
-            cuadriculaGato[1][1]='O';
+            cuadriculaGato[1][1] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        if (cuadriculaGato[2][1]=='X' || cuadriculaGato[2][1]=='O') {
+        if (cuadriculaGato[2][1] == 'X' || cuadriculaGato[2][1] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton6.setText("X");
-            cuadriculaGato[2][1]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[2][1] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton6.setText("O");
-            cuadriculaGato[2][1]='O';
+            cuadriculaGato[2][1] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-         if (cuadriculaGato[0][2]=='X' || cuadriculaGato[0][2]=='O') {
+        if (cuadriculaGato[0][2] == 'X' || cuadriculaGato[0][2] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton7.setText("X");
-            cuadriculaGato[0][2]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[0][2] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton7.setText("O");
-            cuadriculaGato[0][2]='O';
+            cuadriculaGato[0][2] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        if (cuadriculaGato[1][2]=='X' || cuadriculaGato[1][2]=='O') {
+        if (cuadriculaGato[1][2] == 'X' || cuadriculaGato[1][2] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton8.setText("X");
-            cuadriculaGato[1][2]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[1][2] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton8.setText("O");
-            cuadriculaGato[1][2]='O';
+            cuadriculaGato[1][2] = 'O';
         }
         contador++;
+          checarGanador();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-       if (cuadriculaGato[2][2]=='X' || cuadriculaGato[2][2]=='O') {
+        if (cuadriculaGato[2][2] == 'X' || cuadriculaGato[2][2] == 'O') {
             return; // Se cancela todo.
         }
         if (contador % 2 == 0) { // si contador es par
             jButton9.setText("X");
-            cuadriculaGato[2][2]='X'; // Guardar copia en cuadricula.
+            cuadriculaGato[2][2] = 'X'; // Guardar copia en cuadricula.
         } else {
             jButton9.setText("O");
-            cuadriculaGato[2][2]='O';
+            cuadriculaGato[2][2] = 'O';
         }
         contador++;
+        
+        checarGanador();
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        // Resetear todo.
+        cuadriculaGato = new char[3][3];
+        jButton1.setText(" ");
+        jButton2.setText(" ");
+        jButton3.setText(" ");
+        jButton4.setText(" ");
+        jButton5.setText(" ");
+        jButton6.setText(" ");
+        jButton7.setText(" ");
+        jButton8.setText(" ");
+        jButton9.setText(" ");
+        jLabel1.setText(" ");
+        contador=0;
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void checarGanador() {
+        //Checa si X u O ganaron,
+        //o si ya se acabó el juego, checa empate
+
+        if (cuadriculaGato[0][0] == cuadriculaGato[1][0]
+                && cuadriculaGato[1][0] == cuadriculaGato[2][0]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][0] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][0] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[0][1] == cuadriculaGato[1][1]
+                && cuadriculaGato[1][1] == cuadriculaGato[2][1]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][1] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][1] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[0][2] == cuadriculaGato[1][2]
+                && cuadriculaGato[1][2] == cuadriculaGato[2][2]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][2] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][2] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[0][0] == cuadriculaGato[0][1]
+                && cuadriculaGato[0][1] == cuadriculaGato[0][2]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][0] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][0] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[1][0] == cuadriculaGato[1][1]
+                && cuadriculaGato[1][1] == cuadriculaGato[1][2]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[1][0] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[1][0] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[2][0] == cuadriculaGato[2][1]
+                && cuadriculaGato[2][1] == cuadriculaGato[2][2]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[2][0] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[2][0] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[0][0] == cuadriculaGato[1][1]
+                && cuadriculaGato[1][1] == cuadriculaGato[2][2]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][0] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][0] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+             return;
+        }
+
+        if (cuadriculaGato[0][2] == cuadriculaGato[1][1]
+                && cuadriculaGato[1][1] == cuadriculaGato[2][0]) {
+            // Las tres casillas arriba son iguales!
+            // Pueden ser X, O o nada.
+            if (cuadriculaGato[0][2] == 'X') {
+                // X ganó!
+                jLabel1.setText("X ganó!");
+            } else if (cuadriculaGato[0][2] == 'O') {
+                // O ganó!
+                jLabel1.setText("O ganó!");
+            }
+            return;
+        }
+        
+        
+        if (contador==9) {
+            // Es empate!
+             jLabel1.setText("Empate!");
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -341,5 +506,6 @@ public class TicTacToeGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
